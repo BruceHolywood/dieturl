@@ -62,17 +62,17 @@
       <div class="container theme-showcase" role="main">
         <br />
         <?php if (!empty($this->session->userdata('url_array'))) { ?>
-          <div class="alert alert-info">
-            <strong><?php echo $this->lang->line('previous_submissions'); ?></strong> 
-            <br />
-            <?php
-              $url_array = $this->session->userdata('url_array');
-              foreach ($url_array as $key => $long_url) {
-                echo anchor(base_url().$key, base_url().$key)."<br>";
-                echo $long_url."<br><br>"; 
-              }
-            ?>
-          </div>
+          <table>
+            <tr>
+              <td>Diet URL</td>
+              <td>Long URL</td>
+            </tr>
+            <?php $url_array = $this->session->userdata('url_array');
+              foreach($url_array as $key => $long_url){
+              echo "<tr><td>".anchor(base_url().$key, base_url().$key)."</td>";
+              echo "<td>".anchor($long_url, $long_url)."</td></tr>";
+            } ?>
+          </table>
         <?php } ?>
       </div>
   </div>

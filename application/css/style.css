@@ -266,6 +266,25 @@ input,
   width: 300px;
 }
 
+table {  
+    color: white; /* Lighten up font color */
+    width: 100%; 
+    margin: auto;
+    font-size: 10px; 
+}
+
+td, th { border:1px solid white; height: 30px; } /* Make cells a bit taller */
+
+th {  
+    background: transparent; /* Light grey background */
+    font-weight: bold; /* Make sure they're bold */
+}
+
+td {  
+    background: transparent; /* Lighter grey background */
+    text-align: center; /* Center our text */
+}
+
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --
  * On tablets and other medium-sized devices, we want to customize some
