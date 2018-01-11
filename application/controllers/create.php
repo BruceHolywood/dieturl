@@ -21,7 +21,7 @@ class Create extends MY_Controller
         }
         
         //sets validation rules
-        $this->form_validation->set_rules('url_address', $this->lang->line('encode_type_url_here'), 'required|min_length[1]|max_length[1000]|trim');
+        $this->form_validation->set_rules('url_address', $this->lang->line('encode_type_url_here'), 'required|min_length[1]|max_length[1000]|valid_url|trim');
         
         if ($this->form_validation->run() == FALSE) {
             // Set initial values for the view
