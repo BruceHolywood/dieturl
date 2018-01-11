@@ -9,7 +9,7 @@ class Create extends MY_Controller
         parent::__construct();
         $this->load->helper('string');
         $this->load->library('form_validation');
-        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        $this->form_validation->set_error_delimiters('<p class="splash-subhead">', '</p>');
     }
     
     public function index()
