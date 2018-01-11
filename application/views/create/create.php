@@ -78,6 +78,7 @@
       <?php } ?>
     </div>
 </div>
+</div>
 
 
 </body>
