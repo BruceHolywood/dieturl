@@ -266,11 +266,11 @@ input,
   width: 300px;
 }
 
-table {  
+table, table a {  
     color: white; /* Lighten up font color */
     width: 100%; 
     margin: auto;
-    font-size: 10px; 
+    font-size: 12px;
 }
 
 td, th { border:1px solid white; height: 30px; } /* Make cells a bit taller */
@@ -283,6 +283,8 @@ th {
 td {  
     background: transparent; /* Lighter grey background */
     text-align: center; /* Center our text */
+    text-decoration: none;
+    color: white; 
 }
 
 /*

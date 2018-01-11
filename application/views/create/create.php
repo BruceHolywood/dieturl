@@ -64,8 +64,8 @@
         <?php if (!empty($this->session->userdata('url_array'))) { ?>
           <table>
             <tr>
-              <td>Diet URL</td>
-              <td>Long URL</td>
+              <th>Diet URL</th>
+              <th>Long URL</th>
             </tr>
             <?php $url_array = $this->session->userdata('url_array');
               foreach($url_array as $key => $long_url){
