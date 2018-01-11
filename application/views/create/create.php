@@ -1,3 +1,6 @@
+<head>
+  <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>/application/css/style.css">
+</head>
 <div class="container theme-showcase" role="main">
 <div class="page-header">
         <h1><?php echo $this->lang->line('system_system_name'); ?></h1>
