@@ -8,7 +8,9 @@
     
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>application/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>application/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>application/js/javascript.js" ></script>
 
 </head>
 <body>
@@ -38,7 +40,7 @@
               <?php if ($encoded_url == true) : ?>
                 <h1><input type="text" name="url_address" class="splash-head" value="<?php echo $encoded_url; ?>"></h1>
               <?php elseif ($encoded_url == false) : ?>
-                <h1><input type="text" name="url_address" class="splash-head" placeholder="<?php echo $this->lang->line('no_url_splash'); ?>"></h1>
+                <h1><input type="text" name="url_address" class="splash-head" onclick="select()" value="<?php echo $this->lang->line('no_url_splash'); ?>"></h1>
               <?php endif ; ?>
             </div><!-- /input-group -->
           </div><!-- /.col-lg-6 -->
