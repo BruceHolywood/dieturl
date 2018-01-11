@@ -1,21 +1,28 @@
+<!doctype html>
+<html lang="en">
 <head>
-  <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>application/css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive product landing page.">
+    <title>Landing Page &ndash; Layout Examples &ndash; Pure</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>application/css/style.css">
+
 </head>
-<div class="container theme-showcase" role="main">
-<div class="page-header">
-        <h1><?php echo $this->lang->line('system_system_name'); ?></h1>
-      </div>
+<body>
 
-      <p><?php echo $this->lang->line('encode_instruction_1'); ?></p>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="<?php echo base_url();?>">Diet URL</a>
+    </div>
+</div>
 
+<div class="splash-container">
+    <div class="splash">
       <?php if (validation_errors()) : ?>
         <?php echo validation_errors(); ?>
-      <?php endif ; ?>
-
-      <?php if ($success_fail == 'success') : ?>
-        <div class="alert alert-success">
-          <strong><?php echo $this->lang->line('common_form_elements_success_notifty'); ?></strong> <?php echo $this->lang->line('encode_encode_now_success'); ?> 
-        </div>
       <?php endif ; ?>
 
       <?php if ($success_fail == 'fail') : ?>
@@ -24,27 +31,33 @@
         </div>
       <?php endif ; ?>
 
-      <?php echo form_open('create') ; ?>
+      <?php echo form_open('create', 'name="derp" class="pure-form pure-form-stacked"') ; ?>
         <div class="row">
           <div class="col-lg-12">
             <div class="input-group">
-              <input type="text" class="form-control" name="url_address" placeholder="<?php echo $this->lang->line('encode_type_url_here'); ?>">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="submit">Submit URL</button>
-              </span>
+              <?php if ($encoded_url == true) : ?>
+                <h1><input type="text" name="url_address" class="splash-head" value="<?php echo $encoded_url; ?>"></h1>
+              <?php elseif ($encoded_url == false) : ?>
+                <h1><input type="text" name="url_address" class="splash-head" placeholder="<?php echo $this->lang->line('no_url_splash'); ?>"></h1>
+              <?php endif ; ?>
             </div><!-- /input-group -->
           </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
       <?php echo form_close() ; ?>
 
-      <br />
 
-      <?php if ($encoded_url == true) : ?>
-        <div class="alert alert-info">
-          <strong><?php echo $this->lang->line('encode_encoded_url'); ?> </strong> 
-          <?php echo anchor($encoded_url, $encoded_url) ; ?>
-        </div>
-      <?php endif ; ?>
+        <p class="splash-subhead">  
+          <?php if ($encoded_url == true) : ?>
+            <?php echo $this->lang->line('new_url'); ?>
+          <?php elseif ($encoded_url == false) : ?>
+            <?php echo $this->lang->line('enter_url'); ?>
+          <?php endif ; ?>
+        </p>
+        
+        <p>
+            <a href="#" onclick="document.derp.submit();" class="pure-button pure-button-primary">Shrink Me!</a>
+        </p>
+        <div class="container theme-showcase" role="main">
 
       <br />
 
@@ -61,3 +74,10 @@
           ?>
         </div>
       <?php } ?>
+    </div>
+</div>
+
+
+</body>
+</html>
+
