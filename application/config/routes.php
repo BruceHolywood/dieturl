@@ -48,6 +48,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
+|
+|
+|
+| First we set the default controller to point to create.
+| We specify the create and go route uri to remove the controller and function names
+| We set (:any) so that any URI pattern not otherwise defined is to be routed to go/index  
 */
 $route['default_controller'] = 'create';
 $route['404_override'] = '';

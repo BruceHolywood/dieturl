@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 
-$lang['system_system_name'] = "Diet URL";
+$lang['site_title'] = "Diet URL";
 $lang['encode_instruction_1']= "Enter URL to be shortened.";
 $lang['encode_encode_now']= "Shorten Now";
 $lang['encode_encode_now_success']= "Your shortened URL is below";

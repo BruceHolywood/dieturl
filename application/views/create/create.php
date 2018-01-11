@@ -14,12 +14,14 @@
   </head>
 
   <body>
+    <!-- head -->
     <div class="header">
       <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-        <a class="pure-menu-heading" href="<?php echo base_url();?>">Diet URL</a>
+        <a class="pure-menu-heading" href="<?php echo base_url();?>"><?php echo $this->lang->line('site_title'); ?></a>
       </div>
     </div>
 
+    <!-- form input and result display -->
     <div class="splash-container">
       <div class="splash">
         <?php echo form_open('create', 'name="urlform" class="pure-form pure-form-stacked"') ; ?>
@@ -36,7 +38,7 @@
           </div><!-- /.row -->
         <?php echo form_close() ; ?>
 
-
+      <!-- error display and captioning -->
       <p class="splash-subhead">
         <?php if (validation_errors()) : ?>
           <?php echo validation_errors(); ?>
@@ -47,6 +49,7 @@
         <?php endif ; ?>
       </p>
         
+      <!-- submit button -->
       <p>
         <?php if ($encoded_url == true) : ?>
           <a href="<?php echo base_url();?>" class="pure-button pure-button-primary reset-field"><?php echo $this->lang->line('reset_field'); ?></a>
@@ -55,6 +58,7 @@
         <?php endif ; ?>
       </p>
         
+      <!-- previous submissions -->
       <div class="container theme-showcase" role="main">
         <br />
         <?php if (!empty($this->session->userdata('url_array'))) { ?>

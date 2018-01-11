@@ -15,6 +15,7 @@ class Create extends MY_Controller
     public function index()
     {
         
+        //check for and initialise array if not exists
         if (empty($this->session->userdata('url_array'))) {
             $url_array = [];
             $this->session->set_userdata('url_array', $url_array);
@@ -32,9 +33,12 @@ class Create extends MY_Controller
             
             $this->load->view('create/create', $page_data);
         } else {
+            //assign posted url to variable
             $long_url = $this->input->post('url_address');
+            //assign current session array to variable
             $existing_url_array = $this->session->userdata('url_array');
             
+            //loop through array comparing random generated url code to ensure we dont get two the same
             do {
                 $url_code = random_string('alnum', 8);
 
@@ -47,18 +51,26 @@ class Create extends MY_Controller
 
             } while ($end <= 0);            
 
+            //update session array variable with new key and long url
             $url_pair_array = [ $url_code => $long_url ];
 
+            //set suvvess data
             $page_data['success_fail'] = 'success';
             
             // Build link which will be displayed to the user
             $encoded_url = base_url() . $url_code;
             $page_data['encoded_url'] = $encoded_url;
             
+            //create updated array variable by merging existing session array with updated key array
             $updated_array = array_merge($existing_url_array, $url_pair_array);
+            
+            //unset current session url array
             $this->session->unset_userdata('url_array');
+            
+            //set new session url array with updated one
             $this->session->set_userdata('url_array', $updated_array);
 
+            //load view
             $this->load->view('create/create', $page_data);
         }
     }
