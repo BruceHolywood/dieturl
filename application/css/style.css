@@ -193,6 +193,10 @@ a.pure-button-primary {
     opacity: 0.8;
 }
 
+.splash-head-success{
+  cursor: pointer;
+}
+
 /*
  * -- CONTENT STYLES --
  * This represents the content area (everything below the blue section)

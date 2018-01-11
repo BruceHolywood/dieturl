@@ -38,7 +38,7 @@
           <div class="col-lg-12">
             <div class="input-group">
               <?php if ($encoded_url == true) : ?>
-                <h1><input type="text" name="url_address" class="splash-head" value="<?php echo $encoded_url; ?>"></h1>
+                <h1><input type="text" name="url_address" class="splash-head splash-head-success" onclick="select(), location.href='<?php echo $encoded_url; ?>';"" value="<?php echo $encoded_url; ?>"></h1>
               <?php elseif ($encoded_url == false) : ?>
                 <h1><input type="text" name="url_address" class="splash-head" onclick="select()" value="<?php echo $this->lang->line('no_url_splash'); ?>"></h1>
               <?php endif ; ?>
